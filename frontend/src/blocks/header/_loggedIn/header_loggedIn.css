@@ -1,0 +1,7 @@
+@media screen and (max-width: 767px) {
+    .header_loggedIn {
+        padding: 0;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}

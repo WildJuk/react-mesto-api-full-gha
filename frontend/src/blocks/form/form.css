@@ -1,0 +1,11 @@
+.form {
+  margin: 54px 0 0;
+  padding: 0;
+  display: grid;
+}
+
+@media screen and (max-width: 767px) {
+  .form {
+    margin: 75px 0 0;
+  }
+}

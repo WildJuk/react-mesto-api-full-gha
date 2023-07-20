@@ -1,0 +1,34 @@
+.profile__avatar-container {
+  position: relative;
+}
+
+.profile__avatar-container > .profile__edit-avatar-img {
+  opacity: 0;
+}
+
+.profile__avatar-container:hover {
+  cursor: pointer;
+}
+
+.profile__avatar-container:hover > .profile__edit-avatar-img {
+  opacity: 1;
+}
+
+.profile__avatar-container::before {
+  content: '';
+  position: absolute;
+}
+
+.profile__avatar-container::before {
+  border-radius: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 200ms linear;
+}
+
+.profile__avatar-container:hover::before {
+  background-color: rgba(0, 0, 0, 0.8);
+}

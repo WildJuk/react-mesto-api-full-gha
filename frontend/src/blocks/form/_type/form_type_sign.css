@@ -1,0 +1,17 @@
+.form_type_sign {
+    margin: 0;
+    padding: 0;
+    max-width: 358px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 767px) {
+    .form_type_sign {
+        max-width: 358px;
+        padding: 0 30px;
+    }
+  }

@@ -1,0 +1,7 @@
+.form-page {
+    margin: 0;
+    padding: 60px 0 80px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}

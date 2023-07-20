@@ -1,0 +1,18 @@
+.header__button-submenu {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  display: none;
+  cursor: pointer;
+  transition: opacity 300ms linear;
+}
+.header__button-submenu:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 767px) {
+  .header__button-submenu {
+    display: block;
+  }
+}

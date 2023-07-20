@@ -1,0 +1,6 @@
+@media screen and (max-width: 767px) {
+    .header__link_submenu {
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
