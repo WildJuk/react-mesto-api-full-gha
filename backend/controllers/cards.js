@@ -3,10 +3,10 @@ const BadRequestErr = require('../errors/bad-request');
 const NotFoundErr = require('../errors/not-found');
 const ForbiddenErr = require('../errors/forbidden');
 
-const getCards = (req, res) => {
+const getCards = (req, res, next) => {
   Card.find({})
     .then((cards) => res.send(cards))
-    .catch(() => res.status(500).send({ message: 'Ошибка получения списка карточек' }));
+    .catch(next);
 };
 
 const createCard = (req, res, next) => {
@@ -33,7 +33,7 @@ const deleteCard = (req, res, next) => {
       if (!card.owner.equals(req.user._id)) {
         throw new ForbiddenErr('Нельзя удалить чужую карточку');
       } else {
-        card.deleteOne(card)
+        return card.deleteOne()
           .then(() => res.send(card));
       }
     })
