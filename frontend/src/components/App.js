@@ -191,7 +191,7 @@ function App() {
   function loadInitialAppData() {
     api.getStartAppData()
       .then(([userData, initialCards]) => {
-        setCurrentUser(userData);
+        setCurrentUser(userData.data);
         setCards(initialCards);
       })
       .catch(err =>
