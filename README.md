@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 84.252.136.32
+IP 84.252.136.32
 
 Frontend https://wildjuk-pr15-front.nomoredomains.xyz
 

@@ -15,7 +15,7 @@ const auth = (req, res, next) => {
 
   let payload;
   try {
-    payload = jwt.verify(token, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret');
+    payload = jwt.verify(token, NODE_ENV === 'production' ? JWT_SECRET : 'dev_jwt_decret_key');
   } catch (error) {
     next(new UnauthorizedErr('Необходима авторизация'));
     return;
