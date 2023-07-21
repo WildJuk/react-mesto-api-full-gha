@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 84.252.136.32
 
-Frontend https://...
+Frontend https://wildjuk-pr15-front.nomoredomains.xyz
 
-Backend https://...
+Backend https://api.wildjuk-pr15-front.nomoredomains.xyz

@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://auth.nomoreparties.co';
+export const BASE_URL = 'https://api.wildjuk-pr15-front.nomoredomains.xyz';
 
 function checkResponseStatus(response, errorText) {
     if (response.status === 400 || response.status === 401) {

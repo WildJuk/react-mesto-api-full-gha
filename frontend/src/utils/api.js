@@ -1,7 +1,6 @@
 class Api {
-    constructor({ baseUrl, headers }) {
+    constructor({ baseUrl }) {
         this._baseUrl = baseUrl;
-        this._headers = headers;
     }
 
     _checkResponseStatus(response, errorText) {
@@ -13,7 +12,10 @@ class Api {
 
     getUresInfo() {
         return fetch(`${this._baseUrl}/users/me`, {
-            headers: this._headers
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('jwt')}`,
+                'Content-Type': 'application/json',
+            }
         })
             .then(res => {
                 return this._checkResponseStatus(res, 'Ошибка загрузки информации о пользователе')
@@ -22,7 +24,10 @@ class Api {
 
     getInitialCards() {
         return fetch(`${this._baseUrl}/cards`, {
-            headers: this._headers
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('jwt')}`,
+                'Content-Type': 'application/json',
+            }
         })
             .then(res => {
                 return this._checkResponseStatus(res, 'Ошибка получения карточек')
@@ -37,7 +42,10 @@ class Api {
         return fetch(`${this._baseUrl}/users/me`, {
             method: 'PATCH',
             body: JSON.stringify(userData),
-            headers: this._headers
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('jwt')}`,
+                'Content-Type': 'application/json',
+            }
         })
             .then(res => {
                 return this._checkResponseStatus(res, 'Ошибка изменения данных пользователя')
@@ -48,7 +56,10 @@ class Api {
         return fetch(`${this._baseUrl}/cards`, {
             method: 'POST',
             body: JSON.stringify(cardData),
-            headers: this._headers
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('jwt')}`,
+                'Content-Type': 'application/json',
+            }
         })
             .then(res => {
                 return this._checkResponseStatus(res, 'Ошибка загрузки новой карточки на сервер')
@@ -58,7 +69,10 @@ class Api {
     deleteCard(cardId) {
         return fetch(`${this._baseUrl}/cards/${cardId}`, {
             method: 'DELETE',
-            headers: this._headers
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('jwt')}`,
+                'Content-Type': 'application/json',
+            }
         })
             .then(res => {
                 return this._checkResponseStatus(res, 'Ошибка удаления карточки с сервера')
@@ -69,7 +83,10 @@ class Api {
         return fetch(`${this._baseUrl}/users/me/avatar`, {
             method: 'PATCH',
             body: JSON.stringify(avatar),
-            headers: this._headers
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('jwt')}`,
+                'Content-Type': 'application/json',
+            }
         })
             .then(res => {
                 return this._checkResponseStatus(res, 'Ошибка изменения аватара пользователя')
@@ -79,7 +96,10 @@ class Api {
     changeLikeState(cardId, isLiked) {
         return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
             method: isLiked ? 'DELETE' : 'PUT',
-            headers: this._headers
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('jwt')}`,
+                'Content-Type': 'application/json',
+            }
         })
             .then(res => {
                 return this._checkResponseStatus(res, 'Ошибка изменения статуса лайка')
@@ -88,9 +108,5 @@ class Api {
 }
 
 export const api = new Api({
-    baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-64',
-    headers: {
-        authorization: '87e35105-7976-45ad-9045-8a62b10cba0c',
-        'Content-Type': 'application/json'
-    }
+    baseUrl: 'https://api.wildjuk-pr15-front.nomoredomains.xyz'
 });
