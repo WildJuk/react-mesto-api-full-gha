@@ -30,7 +30,7 @@ const getUserInfo = (id, res, next) => {
   User.findById(id)
     .orFail(() => new NotFoundErr('Пользователь не найден'))
     .then((user) => {
-      res.send(user);
+      res.send({ data: user });
     })
     .catch(next);
 };
